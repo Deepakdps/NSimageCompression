@@ -1,0 +1,25 @@
+<StackLayout>
+  <Button
+    class="btn btn-primary btn-active"
+    id="button"
+    text="CAMERA"
+    (tap)="uploadFromCamera()"
+  ></Button>
+
+  <Button
+    class="btn btn-primary btn-active"
+    id="button"
+    text="GALLERY"
+    (tap)="uploadFromgallery()"
+  ></Button>
+  <ListView [items]="imgArray" height="400">
+    <ng-template let-item="item">
+      <image
+        margin="20"
+        [src]="item?.imageurl"
+        class="p-t-10"
+        stretch="aspectFill"
+      ></image>
+    </ng-template>
+  </ListView>
+</StackLayout>
